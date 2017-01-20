@@ -7,4 +7,4 @@ CREATE TABLE IF NOT EXISTS `gg_pricing-tool-labels` (
   `volume` decimal(10,0) NOT NULL,
   `nameOnly` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+) ENGINE=InnoDB  DEFAULT CHARSET=UTF-8 AUTO_INCREMENT=1;
