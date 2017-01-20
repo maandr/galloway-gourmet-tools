@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+    -webkit-box-sizing: border-box; /* Safari */
+}
+.left {
+    width: 20%;
+}
+.products {
+    width: 76%;
+}
+.left, .products {
+    float: left;
+    margin: 1%;
+    border: 1px solid #333;
+}
+.addForm, .print {
+    margin: 10px;
+}
+.addForm h1, .products h1, .print h1 {
+    text-align: center;
+    font-size: 13pt;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #333;
+    margin: 0 10px;
+    margin-bottom: 20px;
+}
+
+.print ul {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+}
+
+input, textarea, select {
+    padding: 5px;
+    font-size: 11pt;
+    min-width: 100%;
+    border: 1px solid #d0d0d0;
+}
+
+textarea {
+    height: 200px;
+}
+
+input:focus, textarea:focus, select:focus {
+    border: 1px solid #313131;
+}
