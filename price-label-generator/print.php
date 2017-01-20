@@ -8,7 +8,7 @@ if(isset($_GET['css']))
 }
 
 // fetch entries
-$qry = (isset($_GET['id'])) ? "SELECT * FROM wl_etiketten WHERE `id` = '".$_GET['id']."'" : "SELECT * FROM wl_etiketten";
+$qry = (isset($_GET['id'])) ? "SELECT * FROM gg_pricing-tool-labels WHERE `id` = '".$_GET['id']."'" : "SELECT * FROM gg_pricing-tool-labels";
 
 $result = mysql_query($qry, $mysql);
 ?>

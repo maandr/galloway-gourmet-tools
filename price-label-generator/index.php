@@ -3,14 +3,14 @@ require_once '../scripts/init_database.php';
 
 if(isset($_GET['delete']))
 {
-    $qry = "DELETE FROM `wl_etiketten` WHERE `id` = '".$_GET['delete']."'";
+    $qry = "DELETE FROM `gg_pricing-tool-labels` WHERE `id` = '".$_GET['delete']."'";
     mysql_query($qry, $mysql);
 }
 
 if(isset($_POST['submitAdd']))
 {
     // insert
-    $qry = "INSERT INTO `wl_etiketten` (`name`, `desc`, `price`, `priceKg`, `volume`) VALUES ('".$_POST['productName']."', '".$_POST['productDesc']."', '".str_replace(",", ".", $_POST['productPrice'])."', '".str_replace(",", ".", $_POST['productPriceKg'])."', '".$_POST['productVolume']."')";
+    $qry = "INSERT INTO `gg_pricing-tool-labels` (`name`, `desc`, `price`, `priceKg`, `volume`) VALUES ('".$_POST['productName']."', '".$_POST['productDesc']."', '".str_replace(",", ".", $_POST['productPrice'])."', '".str_replace(",", ".", $_POST['productPriceKg'])."', '".$_POST['productVolume']."')";
     mysql_query($qry, $mysql);
 }
 
@@ -23,7 +23,7 @@ if(isset($_POST['editId']))
     }
 
     // update
-    $qry = "UPDATE `wl_etiketten` SET
+    $qry = "UPDATE `gg_pricing-tool-labels` SET
                 `name` = '".$_POST['editName']."',
                 `desc` = '".$_POST['editDesc']."',
                 `price` = '".str_replace(",", ".", $_POST['editPrice'])."',
@@ -36,7 +36,7 @@ if(isset($_POST['editId']))
 }
 
 // fetch entries
-$qry = "SELECT * FROM wl_etiketten";
+$qry = "SELECT * FROM gg_pricing-tool-labels";
 $result = mysql_query($qry, $mysql);
 
 ?>
