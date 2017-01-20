@@ -10,7 +10,7 @@ if(!mysql_query($shema_query, $mysql)) {
 $migration_query = file_get_contents('migration/migration_2017-01-20_initial.sql');
 
 if(!mysql_query($migration_query, $mysql)) {
-  die('database migration failed.')
+  die('database migration failed.');
 }
 
 echo 'success.';
