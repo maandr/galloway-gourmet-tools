@@ -36,7 +36,7 @@ if(isset($_POST['editId']))
 }
 
 // fetch entries
-$qry = "SELECT * FROM gg_pricing-tool-labels";
+$qry = "SELECT * FROM `gg_pricing-tool-labels`";
 $result = mysql_query($qry, $mysql);
 
 ?>
