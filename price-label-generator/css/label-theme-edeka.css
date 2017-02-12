@@ -29,7 +29,7 @@ ul.etikett li.nameOnly {
     background-color: #e2c724;
 }
 
-ul.etikett li:nth-child(12n) {
+ul.etikett li:nth-child(12n), ul.etikett li:nth-child(24n), ul.etikett li:nth-child(36n) {
     page-break-after: always;
 }
 
