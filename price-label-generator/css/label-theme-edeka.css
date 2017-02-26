@@ -29,7 +29,9 @@ ul.etikett li.nameOnly {
     background-color: #e2c724;
 }
 
-ul.etikett li:nth-child(12n), ul.etikett li:nth-child(24n), ul.etikett li:nth-child(36n) {
+ul.etikett li:nth-child(12n),
+ul.etikett li:nth-child(24n),
+ul.etikett li:nth-child(36n) {
     page-break-after: always;
 }
 
@@ -37,7 +39,7 @@ ul.etikett li.namePrice div.bio {
     position: absolute;
     left: 0.2cm;
     top: 1.75cm;
-    background-image: url('bio.png');
+    background-image: url('../assets/img/bio.png');
     background-size: 70px 40px;
     background-repeat: no-repeat;
     width: 100px;

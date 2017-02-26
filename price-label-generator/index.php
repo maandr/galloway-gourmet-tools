@@ -57,11 +57,22 @@ $result = mysql_query($qry, $mysql);
                 }
             }
 
-            function printEntry(id)
+            function printEntry()
             {
                 var css = document.getElementById("template").value;
+                var ids = document.getElementById("print-ids").value;
 
-                window.location.href = "print.php?css=" + css + "&id=" + id;
+                window.location.href = "print.php?css=" + css + "&ids=" + ids;
+            }
+
+            function addToPrint(id) {
+              var ids = document.getElementById("print-ids").value;
+
+              if(ids.length > 0) {
+                document.getElementById("print-ids").value = ids + "," + id;
+              } else {
+                document.getElementById("print-ids").value = id;
+              }
             }
 
             function printAll()
@@ -100,6 +111,8 @@ $result = mysql_query($qry, $mysql);
                     <option value="edeka">Edeka</option>
                 </select>
                 <input type="button" name="print" value="Alle Drucken" onclick="printAll()" />
+                <input type="button" name="print" value="Ausgewählte Drucken" onclick="printEntry()" />
+                <input id="print-ids" type="text" name="ids" value="" />
             </div>
         </div>
 
@@ -107,13 +120,13 @@ $result = mysql_query($qry, $mysql);
             <h1>Übersicht</h1>
             <table>
                 <tr>
+                    <th></th>
                     <th>Produkt Name</th>
                     <th>Produkt Beschreibung</th>
                     <th>Preis pro Stück</th>
                     <th>Preis pro kg</th>
                     <th>Inhalt (g)</th>
                     <th>Nur Name</th>
-                    <th></th>
                     <th></th>
                 </tr>
                 <?php
@@ -123,13 +136,13 @@ $result = mysql_query($qry, $mysql);
 
                     echo '<tr>';
                     echo '<form method="post" action="index.php">';
+                    echo '<td><input type="checkbox" onchange="addToPrint('.$row['id'].')" /></td>';
                     echo '<td><input type="text" name="editName" value="'.$row['name'].'" onchange="this.form.submit()" /></td>';
                     echo '<td><input type="text" name="editDesc" value="'.$row['desc'].'" onchange="this.form.submit()" /></td>';
                     echo '<td><input type="text" name="editPrice" style="width: 75px;" value="'.$row['price'].'" onchange="this.form.submit()" /></td>';
                     echo '<td><input type="text" name="editPriceKg" style="width: 75px;" value="'.$row['priceKg'].'" onchange="this.form.submit()" /></td>';
                     echo '<td><input type="text" name="editVolume" style="width: 75px;" value="'.$row['volume'].'" onchange="this.form.submit()" /></td>';
                     echo '<td><input type="checkbox" name="editNameOnly" '.$checked.' onchange="this.form.submit()" /></td>';
-                    echo '<td><input type="button" name="print" value="Drucken" onclick="printEntry('.$row['id'].')" /></td>';
                     echo '<td>
                             <input type="button" name="delete" value="x" onclick="deleteEntry('.$row['id'].')" />
                             <input type="hidden" name="editId" value="'.$row['id'].'" />
